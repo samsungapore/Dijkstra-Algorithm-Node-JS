@@ -1,4 +1,5 @@
 const { Graph, Node, dijkstrasAlgorithm } = require('./dijkstra');
+const { describe, before, it } = require('node:test');
 
 let graph = new Graph();
 
@@ -12,7 +13,7 @@ let algoResult = null;
 
 describe('Dijkstra', () => {
 
-    before(function (done) {
+    before(() => {
         SF.addNeighbor(Seattle, 3);
         SF.addNeighbor(Idaho, 5);
 
@@ -38,10 +39,9 @@ describe('Dijkstra', () => {
         graph.addNode(Chicago);
         graph.addNode(NYC);
 
-        done();
     });
 
-    it('test SF as starting point', (done) => {
+    it('test SF as starting point', () => {
 
         graph.resetNodes();
         SF.start = true;
@@ -49,10 +49,9 @@ describe('Dijkstra', () => {
         algoResult = dijkstrasAlgorithm(graph, SF);
         console.log(algoResult);
 
-        done();
     });
 
-    it('test Seattle as starting point', (done) => {
+    it('test Seattle as starting point', () => {
 
         graph.resetNodes();
         Seattle.start = true;
@@ -60,10 +59,9 @@ describe('Dijkstra', () => {
         algoResult = dijkstrasAlgorithm(graph, SF);
         console.log(algoResult);
 
-        done();
     });
 
-    it('test Idaho as starting point', (done) => {
+    it('test Idaho as starting point', () => {
 
         graph.resetNodes();
         Idaho.start = true;
@@ -71,10 +69,9 @@ describe('Dijkstra', () => {
         algoResult = dijkstrasAlgorithm(graph, SF);
         console.log(algoResult);
 
-        done();
     });
 
-    it('test Chicago as starting point', (done) => {
+    it('test Chicago as starting point', () => {
 
         graph.resetNodes();
         Chicago.start = true;
@@ -82,10 +79,9 @@ describe('Dijkstra', () => {
         algoResult = dijkstrasAlgorithm(graph, SF);
         console.log(algoResult);
 
-        done();
     });
 
-    it('test NYC as starting point', (done) => {
+    it('test NYC as starting point', () => {
 
         graph.resetNodes();
         NYC.start = true;
@@ -93,7 +89,6 @@ describe('Dijkstra', () => {
         algoResult = dijkstrasAlgorithm(graph, SF);
         console.log(algoResult);
 
-        done();
     });
 
 });
