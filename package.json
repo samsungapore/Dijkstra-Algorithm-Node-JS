@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit --timeout 10000"
+    "test": "node --test test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
-  "devDependencies": {
-    "mocha": "^10.8.2"
+  "engines": {
+    "node": ">=18.8.0"
   }
 }
